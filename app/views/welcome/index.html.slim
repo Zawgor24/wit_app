@@ -3,6 +3,8 @@ h1  Lesson 10, WIT.ai task
 - if current_user.present?
   ' Hello
   = current_user.email
+  = link_to 'Exit', logout_path
+  
   p = image_tag(current_user.image.url)
 
   = link_to 'New message', new_user_message_path(current_user)
