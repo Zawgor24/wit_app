@@ -1,0 +1,14 @@
+h1  All user messages
+.row
+  table.table-bordered
+    thead
+      tr.col
+        th Input sentense
+        th Output
+    tbody
+      - @messages.each do |message|
+        tr.col
+          td = message.input
+          td = message.output 
+
+= link_to 'Back', root_path
