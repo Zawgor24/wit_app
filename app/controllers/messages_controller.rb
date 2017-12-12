@@ -1,5 +1,5 @@
 # Message class - show, and create new messages from user
-# and redirect to user's messages with answears from wit.ai
+# and redirect to user's messages with answers from wit.ai
 class MessagesController < ApplicationController
   def index
     @messages = current_user.messages

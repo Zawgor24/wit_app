@@ -1,14 +1,24 @@
 h1  Lesson 10, WIT.ai task
 
 - if current_user.present?
-  ' Hello
-  = current_user.email
-  = link_to 'Exit', logout_path
-  
-  p = image_tag(current_user.image.url)
+  div.info
+    = current_user.email
+    button type="button" class="btn btn-outline-dark" 
+      = link_to 'Exit', logout_path
+    
+    p = image_tag(current_user.image.url)
 
-  = link_to 'New message', new_user_message_path(current_user)
+  div.link = link_to 'New message', new_user_message_path(current_user)
 
 - else
-  = link_to 'Facebook', 'auth/facebook'
+  button type="button" class="btn btn-outline-primary" 
+    = link_to 'Sign in via Facebook', 'auth/facebook' , class: 'facebook-link'
 
+h2 Here you can write your own message and send it to Wit.ia 'bot', he will recognize it and will gives you answer. We can get 3 types of answers: <br> 
+ol
+  li <strong> 'hello' </strong>. This happens when you put some key words such as: <strong> 'hello', 'hi' etc... </strong> This means that your message includes at 'hello_present' intent.
+
+  li <strong> 'trash' </strong>. This happens when you put some key words such as: <strong> 'trash', 'qwe', 'bullshit', 'java better' etc... </strong> This means that your message includes at 'trash_present' intent.
+  
+  li Empty or 'nil', this means that bot doesn't find any intent which can befit to your message
+h2  Lets try ;)

@@ -1,10 +1,8 @@
-.row
-  .col-md-4
-    h1 Create you message
+h1 Create you message
 
-    = form_for [current_user, @message] do |f|
-      .form-group
-        = f.label :input
-        = f.text_field :input
-      .form-group
-        = f.submit
+= form_for [current_user, @message] do |f|
+  .form-group
+    = f.label :input
+    = f.text_field :input
+  .form-group
+    = f.submit
